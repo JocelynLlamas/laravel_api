@@ -19,6 +19,11 @@ class TaskPolicy
         
         return true;
     }
+    // Determine wheter the user can create the model
+    public function create(User $user):bool{
+
+        return true;
+    }
     public function view(User $user, Task $task):bool{
 
         return $user->id === $task->user_id;
